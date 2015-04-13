@@ -1,0 +1,88 @@
+var main = Titanium.UI.createWindow({
+    backgroundColor:'#000005',
+    title:'Skylar Densley'
+});
+var button1 = Titanium.UI.createButton({
+    title:'About',
+    width:200,
+    height:40,
+    top:'50%'
+});
+main.add(button1);
+ 
+button1.addEventListener('click', function()
+{
+    var win2 = Titanium.UI.createWindow({
+        backgroundColor:'#000005',
+        title:'About Skylar Densley',
+        barColor:'black',
+        url:'newWin.js'
+    });
+    var b = Titanium.UI.createButton({
+        title:'Back',
+        style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN,
+        top:'75%'
+    });
+    
+    var label3 = Ti.UI.createLabel ({
+	text: 'Professional Summary',
+	top: '2%',
+	fontSize: 20,
+	fontWeight: 'bold'
+		});
+
+	win2.add(label3);
+	
+	var label4 = Ti.UI.createLabel ({
+	text: 'I am a very hard-working individual who has a long history in the workforce. I like to make sure that I always give a 110% in everything I do. However, I am very enthusiastic and enjoy living life to the fullest. \n\n Education: \n High School Diploma \n Business degree in May 2015 ',
+	top: '5%',
+	fontSize: 12,
+	textAlign: 'left'
+	});
+
+	win2.add(label4);
+	
+	
+    win2.add(b);
+    b.addEventListener('click',function()
+    {
+        win2.close();
+    });
+    win2.open();
+    
+ });
+ 
+// Adding Labels to Win1
+
+var label1 = Ti.UI.createLabel({
+	text : ' Skylar Densley',
+	color : '#FF0000',
+	top: '60%',
+	font: {fontSize: 30, fontWeight: 'bold'},
+	textAlign : 'left'
+});
+
+var label2 = Ti.UI.createLabel({
+	text : ' Contact Information: \n Phone: (208)-316-8607 \n Email: dens6001@vandals.uidaho.edu',
+	color : '#FF0000',
+	top: '70%',
+	font: {fontSize: 14},
+	textAlign : 'left'
+});
+
+main.add(label1);
+main.add(label2);
+main.open();
+
+// Adding picture to window 1
+
+var imgView = Titanium.UI.createImageView({
+    top: '10%',
+    width: 150,
+    height: 200,
+    left: '110'
+});
+
+imgView.image = '\Self.jpg';
+
+main.add(imgView);
